@@ -1,0 +1,24 @@
+Este proyecto está preparado para mostrar cómo sería la utilización del doble buffer para evitar el parpadeo en la pantalla.
+El tiempo de refresco no está ajustado, ya que está a 1 milisegundo, que aparentemente es excesivo, pero en el ordenador
+en que se prueba va bien.
+El resto de clases (modelo de la realidad) son sólo como ejemplo.
+
+Las clases que tienen que ver con el doble buffer son:
+* Realidad: se necesita cualquier modelo de mundo, al que pedirle que se visualice (método visualizar (sobre un Graphics)).
+* RefrescoVisor: hilo que se encarga del refresco de la pantalla mediante doble buffer. Necesita un objeto de clase Realidad
+         y otro de clase Canvas (respectívamente, qué se dibuja, y dónde se hace)
+* Interfaz: este sería modificable para cada programa, pero debe encargarse de crear "la" Realidad y de tener un Canvas
+         sobre el que mostrarla. También debe relacionarlo todo y arrancar el hilo de visualización (esto es mejorable,
+         podría ir en otra clase, quizá un "Canvas autorrefrescable", y con un interfaz Realidad en vez de clase, para 
+         mejorar la modularidad.)
+         
+Las otras clases no son objetivos del proyecto "anti parpadeo", pero pueden servir como ejemplo de avance automático
+de un mundo creado por nosotros (puede ser una base para un juego, en vez de una simulación, o mezcla de los dos ;D ).
+Explico los aspectos fundamentales:
+* AvanceMundo: Hilo detenible (como RefrescoVisor), que, básicamente, lo que hace es pedirle cada cierto tiempo al 
+        mundo (objeto de clase Realidad) que avance algo de tiempo (invocación del método paso(segundos).
+* Elemento2D: son los elementos de los que está compuesta "la realidad".
+* Fuerza2D, Velocidad2D, Vector2D: auxiliares para este mundo 2D.
+* RealidadCircular: Clase hija de realidad, que, en vez de dejar que los objetos salgan de los bordes, los hace salir
+        "por el otro lado". Está refinada tanto el cambio de posición del objeto como el dibujo cuando se sale una parte
+        de un elemento (se ve por "el otro lado")
