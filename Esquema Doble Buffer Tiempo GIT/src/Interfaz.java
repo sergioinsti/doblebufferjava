@@ -42,24 +42,24 @@ public class Interfaz {
 		//elemento1.setMasa(1.989e30);
 		elemento1.setMasa(190);
 		//elemento1.aplicarFuerza(new Fuerza2D(2.8,0),1);
-		window.realidad.añadirElemento(elemento1);
-		window.realidad.setExcepción(elemento1);
+		window.realidad.aÃ±adirElemento(elemento1);
+		window.realidad.setExcepciÃ³n(elemento1);
 		
 		Elemento2D elemento2 = new Elemento2D(690, 250, 10, Color.blue);
 		//elemento2.setMasa(5.972e24);
 		elemento2.setMasa(40.5);
 		//elemento2.aplicarFuerza(new Fuerza2D(0,1.2),1);
-		// Cálculo velocidad
+		// CÃ¡lculo velocidad
 		//final double G = 1;
 		//double v = Math.sqrt(G*elemento1.getMasa()/elemento1.distancia(elemento2));
-		elemento2.setVelocidad(new Velocidad2D(0, 0.75)); // 0,75 ó v
-		window.realidad.añadirElemento(elemento2);
+		elemento2.setVelocidad(new Velocidad2D(0, v)); // 0,75 Ã³ v
+		window.realidad.aÃ±adirElemento(elemento2);
 
 		/*Elemento2D elemento3 = new Elemento2D(500, 200, 75, Color.RED);
 		//elemento2.setMasa(5.972e24);
 		elemento3.setMasa(1000);
 		elemento3.aplicarFuerza(new Fuerza2D(0,350),1);
-		window.realidad.añadirElemento(elemento3);
+		window.realidad.aÃ±adirElemento(elemento3);
 */
 		
 		Elemento2D elemento4 = new Elemento2D(690, 155, 10, Color.orange);
@@ -67,14 +67,14 @@ public class Interfaz {
 		elemento4.setMasa(40.5);
 		//elemento2.aplicarFuerza(new Fuerza2D(0,1.2),1);
 		//elemento4.setVelocidad(new Velocidad2D(-0, -0.1));
-		window.realidad.añadirElemento(elemento4);
+		window.realidad.aÃ±adirElemento(elemento4);
 		
 		for(int i=0; i<10;i++) {
 			Elemento2D elAux = new Elemento2D(600+1, 100+i, 10);
 			elAux.setMasa(4.05);
 			//elAux.aplicarFuerza(new Fuerza2D(0,1.2),1);
 			elAux.setVelocidad(new Velocidad2D(-0, -0.1));
-			window.realidad.añadirElemento(elAux);
+			window.realidad.aÃ±adirElemento(elAux);
 				
 		}
 		
@@ -91,7 +91,7 @@ public class Interfaz {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					// Visión estática
+					// VisiÃ³n estÃ¡tica
 					window.realidad.visualizar(window.canvas.getGraphics());
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -104,7 +104,7 @@ public class Interfaz {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// Acción de background //CONTROL
+		// AcciÃ³n de background //CONTROL
 		window.refresco = new RefrescoVisor(window.canvas, window.realidad, 1);
 		window.refresco.start();
 		window.avanceMundo = new AvanceMundo(window.realidad, 1, 5);
