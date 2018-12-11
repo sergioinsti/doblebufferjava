@@ -1,9 +1,5 @@
 package nucleo;
 
-import java.awt.Canvas;
-import java.awt.Graphics;
-import java.awt.image.BufferStrategy;
-
 public class AvanceMundo extends Thread {
 	/**
 	 * Contenido con el que se refrescará el lienzo de dibujo
