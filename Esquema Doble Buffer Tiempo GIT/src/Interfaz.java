@@ -13,7 +13,6 @@ import elementos.Elemento2D;
 import elementos.Velocidad2D;
 import nucleo.AvanceMundo;
 import nucleo.Realidad;
-import nucleo.RealidadCircular;
 import nucleo.RefrescoVisor;
 
 public class Interfaz {
