@@ -26,6 +26,7 @@ public class Interfaz {
 	private RefrescoVisor refresco;
 	private AvanceMundo avanceMundo;
 
+	
 	/**
 	 * Launch the application.
 	 */
