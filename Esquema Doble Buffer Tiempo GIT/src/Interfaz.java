@@ -69,14 +69,14 @@ public class Interfaz {
 		//elemento4.setVelocidad(new Velocidad2D(-0, -0.1));
 		window.realidad.añadirElemento(elemento4);
 		
-		for(int i=0; i<10;i++) {
+		for(int i=0; i<5;i++) {
 			Elemento2D elAux = new Elemento2D(600+1, 100+i, 10);
-			elAux.setMasa(4.05);
+			elAux.setMasa(10.05);
 			//elAux.aplicarFuerza(new Fuerza2D(0,1.2),1);
 			elAux.setVelocidad(new Velocidad2D(-0, -0.1));
 			window.realidad.añadirElemento(elAux);
 				
-		}
+		}/**/
 		
 		// VISTA
 		window.frame.setVisible(true);
@@ -107,8 +107,10 @@ public class Interfaz {
 		// Acción de background //CONTROL
 		window.refresco = new RefrescoVisor(window.canvas, window.realidad, 1);
 		window.refresco.start();
-		window.avanceMundo = new AvanceMundo(window.realidad, 1, 5);
+		window.avanceMundo = new AvanceMundo(window.realidad, 0.001, 0.005);
 		window.avanceMundo.start();
+		//window.avanceMundo = new AvanceMundo(window.realidad, 1, 5);
+		//window.avanceMundo.start();
 	}
 
 	/**
