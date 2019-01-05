@@ -52,7 +52,7 @@ public class Interfaz {
 		// Cálculo velocidad
 		//final double G = 1;
 		//double v = Math.sqrt(G*elemento1.getMasa()/elemento1.distancia(elemento2));
-		elemento2.setVelocidad(new Velocidad2D(0, 0.75)); // 0,75 ó v
+		//*elemento2.setVelocidad(new Velocidad2D(0, 0.75)); // 0,75 ó v
 		window.realidad.añadirElemento(elemento2);
 
 		/*Elemento2D elemento3 = new Elemento2D(500, 200, 75, Color.RED);
@@ -73,7 +73,7 @@ public class Interfaz {
 			Elemento2D elAux = new Elemento2D(600+1, 100+i, 10);
 			elAux.setMasa(10.05);
 			//elAux.aplicarFuerza(new Fuerza2D(0,1.2),1);
-			elAux.setVelocidad(new Velocidad2D(-0, -0.1));
+			//*elAux.setVelocidad(new Velocidad2D(-0, -0.1));
 			window.realidad.añadirElemento(elAux);
 				
 		}/**/
@@ -107,7 +107,7 @@ public class Interfaz {
 		// Acción de background //CONTROL
 		window.refresco = new RefrescoVisor(window.canvas, window.realidad, 1);
 		window.refresco.start();
-		window.avanceMundo = new AvanceMundo(window.realidad, 0.001, 0.005);
+		window.avanceMundo = new AvanceMundo(window.realidad, 0.0005, 0.000001);
 		window.avanceMundo.start();
 		//window.avanceMundo = new AvanceMundo(window.realidad, 1, 5);
 		//window.avanceMundo.start();
